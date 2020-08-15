@@ -11,8 +11,9 @@
     "issues": "https://github.com/hlashbrooke/WordPress-Plugin-Template"
   },
   "require": {
-    "php": ">=5.4",
-    "squizlabs/php_codesniffer": "^3.3.1"
+    "php": "^7.1",
+    "squizlabs/php_codesniffer": "^3.3.1",
+    "flayyer/flayyer": "0.1.2"
   },
   "require-dev": {
     "wp-coding-standards/wpcs": "2.1.*"
