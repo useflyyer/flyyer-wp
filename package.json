@@ -1,0 +1,14 @@
+{
+  "name": "wordpress-plugin-template",
+  "title": "WordPress Plugin Template",
+  "version": "1.0.0",
+  "homepage": "https://github.com/hlashbrooke/WordPress-Plugin-Template",
+  "main": "Gruntfile.js",
+  "devDependencies": {
+    "grunt": "^1.0.3",
+    "grunt-contrib-cssmin": "~0.9.0",
+    "grunt-contrib-less": "^2.0.0",
+    "grunt-contrib-uglify": "~0.4.0",
+    "grunt-contrib-watch": "^1.1.0"
+  }
+}
