@@ -1,7 +1,7 @@
 === FLAYYER Previews ===
-Contributors: hlashbrooke
-Donate link: http://www.hughlashbrooke.com/donate
-Tags: wordpress, plugin, template
+Contributors: lopezjurip
+Donate link: https://flayyer.com
+Tags: flayyer, seo, image, preview, wordpress, plugin
 Requires at least: 3.9
 Tested up to: 4.0
 Stable tag: 1.0

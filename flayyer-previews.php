@@ -2,10 +2,10 @@
 /**
  * Plugin Name: FLAYYER Previews
  * Version: 1.0.0
- * Plugin URI: http://www.hughlashbrooke.com/
- * Description: This is your starter template for your next WordPress plugin.
- * Author: Hugh Lashbrooke
- * Author URI: http://www.hughlashbrooke.com/
+ * Plugin URI: https://flayyer.com/
+ * Description: Generate dynamic and meaningful previews for your links. Use FLAYYER smart urls to pass values to our image-rendering service and make each URL's preview unique.
+ * Author: FLAYYER.com
+ * Author URI: https://flayyer.com/
  * Requires at least: 4.0
  * Tested up to: 4.0
  *
@@ -13,7 +13,7 @@
  * Domain Path: /lang/
  *
  * @package WordPress
- * @author Hugh Lashbrooke
+ * @author Patricio Lopez
  * @since 1.0.0
  */
 
