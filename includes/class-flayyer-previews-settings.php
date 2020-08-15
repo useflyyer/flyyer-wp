@@ -129,17 +129,19 @@ class FLAYYER_Previews_Settings
    */
   private function menu_settings()
   {
+    # HEY - Side-menu settings
     return apply_filters(
       $this->base . 'menu_settings',
       array(
-        'location'    => 'options', // Possible settings: options, menu, submenu.
+        'location'    => 'menu', // Possible settings: options, menu, submenu.
         'parent_slug' => 'options-general.php',
-        'page_title'  => __('Plugin Settings', 'flayyer-previews'),
-        'menu_title'  => __('Plugin Settings', 'flayyer-previews'),
+        'page_title'  => __('FLAYYER', 'flayyer-previews'),
+        'menu_title'  => __('FLAYYER', 'flayyer-previews'),
         'capability'  => 'manage_options',
         'menu_slug'   => $this->parent->_token . '_settings',
         'function'    => array($this, 'settings_page'),
-        'icon_url'    => '',
+        'icon_url'    => 'dashicons-slides', // https://developer.wordpress.org/resource/dashicons/#slides
+        // 'icon_url'    => plugins_url( 'flayyer-previews/assets/flayyer-logo.png' ),
         'position'    => null,
       )
     );
@@ -200,8 +202,8 @@ class FLAYYER_Previews_Settings
   {
 
     $settings['standard'] = array(
-      'title'       => __('Standard', 'flayyer-previews'),
-      'description' => __('These are fairly standard form input fields.', 'flayyer-previews'),
+      'title'       => __('FLAYYER Settings', 'flayyer-previews'),
+      'description' => __('Basic configuration. Need help? Contact: <a href="mailto:help@flayyer.com">help@flayyer.com</a>', 'flayyer-previews'),
       'fields'      => array(
         array(
           'id'          => 'text_field',
@@ -278,48 +280,6 @@ class FLAYYER_Previews_Settings
             'triangle'  => 'Triangle',
           ),
           'default'     => array('circle', 'triangle'),
-        ),
-      ),
-    );
-
-    $settings['extra'] = array(
-      'title'       => __('Extra', 'flayyer-previews'),
-      'description' => __('These are some extra input fields that maybe aren\'t as common as the others.', 'flayyer-previews'),
-      'fields'      => array(
-        array(
-          'id'          => 'number_field',
-          'label'       => __('A Number', 'flayyer-previews'),
-          'description' => __('This is a standard number field - if this field contains anything other than numbers then the form will not be submitted.', 'flayyer-previews'),
-          'type'        => 'number',
-          'default'     => '',
-          'placeholder' => __('42', 'flayyer-previews'),
-        ),
-        array(
-          'id'          => 'colour_picker',
-          'label'       => __('Pick a colour', 'flayyer-previews'),
-          'description' => __('This uses WordPress\' built-in colour picker - the option is stored as the colour\'s hex code.', 'flayyer-previews'),
-          'type'        => 'color',
-          'default'     => '#21759B',
-        ),
-        array(
-          'id'          => 'an_image',
-          'label'       => __('An Image', 'flayyer-previews'),
-          'description' => __('This will upload an image to your media library and store the attachment ID in the option field. Once you have uploaded an imge the thumbnail will display above these buttons.', 'flayyer-previews'),
-          'type'        => 'image',
-          'default'     => '',
-          'placeholder' => '',
-        ),
-        array(
-          'id'          => 'multi_select_box',
-          'label'       => __('A Multi-Select Box', 'flayyer-previews'),
-          'description' => __('A standard multi-select box - the saved data is stored as an array.', 'flayyer-previews'),
-          'type'        => 'select_multi',
-          'options'     => array(
-            'linux'   => 'Linux',
-            'mac'     => 'Mac',
-            'windows' => 'Windows',
-          ),
-          'default'     => array('linux'),
         ),
       ),
     );
