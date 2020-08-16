@@ -1,5 +1,7 @@
+const pkg = require('./package.json');
+
 /* jshint node:true */
-module.exports = function( grunt ){
+module.exports = function (grunt) {
   'use strict';
 
   grunt.initConfig({
@@ -78,19 +80,47 @@ module.exports = function( grunt ){
       }
     },
 
+    // Build a zip file for deployment
+    compress: {
+      main: {
+        options: {
+          archive: `dist/flayyer-${pkg['version']}.zip`
+        },
+        files: [
+          { src: ['assets/css/*.css'], dest: 'assets/css/', filter: 'isFile' }, // includes css files in css path
+          { src: ['assets/js/*.min.js'], dest: 'assets/js/', filter: 'isFile' }, // includes js files in js path
+          { src: ['assets/**', '!assets/js', '!assets/css'], dest: 'assets/', filter: 'isFile' }, // includes any other assets outside js/css
+          { src: ['includes/**'], dest: 'includes/', filter: 'isFile' }, //includes files in includes path
+          { src: ['lang/**'], dest: 'lang/', filter: 'isFile' }, //includes files in lang path
+          { src: ['vendor/**'], dest: 'vendor/', filter: 'isFile' }, //includes files in lang path
+          { src: ['*.php', 'LICENSE', '*.txt'], filter: 'isFile' } //includes base directory files
+        ]
+      }
+    }
+
   });
 
+  grunt.loadTasks('tasks');
+
   // Load NPM tasks to be used here
-  grunt.loadNpmTasks( 'grunt-contrib-less' );
-  grunt.loadNpmTasks( 'grunt-contrib-cssmin' );
-  grunt.loadNpmTasks( 'grunt-contrib-uglify' );
-  grunt.loadNpmTasks( 'grunt-contrib-watch' );
+  grunt.loadNpmTasks('grunt-contrib-less');
+  grunt.loadNpmTasks('grunt-contrib-cssmin');
+  grunt.loadNpmTasks('grunt-contrib-uglify');
+  grunt.loadNpmTasks('grunt-contrib-watch');
+  grunt.loadNpmTasks('grunt-contrib-compress');
 
   // Register tasks
-  grunt.registerTask( 'default', [
+  grunt.registerTask('default', [
     'less',
     'cssmin',
     'uglify'
   ]);
+
+  grunt.registerTask('build', [
+    'less',
+    'cssmin',
+    'uglify',
+    'compress'
+  ])
 
 };

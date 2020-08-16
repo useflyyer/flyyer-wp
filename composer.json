@@ -1,14 +1,16 @@
 {
-  "name": "hlashbrooke/wordpress-plugin-template",
+  "name": "flayyer/flayyer-wp",
   "license": "GPL-2.0-or-later",
-  "description": "A robust code template for creating a standards-compliant WordPress plugin.",
+  "description": "Generate meaningful image preview (og:image) for your links by using and creating dynamic templates.",
   "keywords": [
+    "flayyer",
+    "seo",
+    "preview",
     "wordpress",
-    "wp",
-    "plugin template"
+    "wp"
   ],
   "support": {
-    "issues": "https://github.com/hlashbrooke/WordPress-Plugin-Template"
+    "issues": "https://github.com/flayyer/flayyer-wp"
   },
   "require": {
     "php": "^7.1",

@@ -1,11 +1,15 @@
 {
-  "name": "wordpress-plugin-template",
-  "title": "WordPress Plugin Template",
+  "name": "flayyer-wp-builder",
+  "title": "Builder scripts",
   "version": "1.0.0",
-  "homepage": "https://github.com/hlashbrooke/WordPress-Plugin-Template",
+  "homepage": "https://github.com/e-baker/WordPress-Plugin-Template",
   "main": "Gruntfile.js",
+  "scripts": {
+    "build": "grunt build"
+  },
   "devDependencies": {
     "grunt": "^1.0.3",
+    "grunt-contrib-compress": "^1.6.0",
     "grunt-contrib-cssmin": "~0.9.0",
     "grunt-contrib-less": "^2.0.0",
     "grunt-contrib-uglify": "~0.4.0",
