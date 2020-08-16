@@ -1,0 +1,4 @@
+wp-content
+node*
+vendor*
+.DS_Store
