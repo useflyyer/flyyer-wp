@@ -141,10 +141,6 @@ function add_flayyer_presenter($presenters)
           if (get_option('flayyer_default_post_template')) {
             $template = get_option('flayyer_default_post_template');
           }
-          $variables_default = json_decode(get_option('flayyer_default_post_variables'), true);
-          if ($variables_default) {
-            $variables = array_merge($variables, $variables_default);
-          }
 
           $post = \get_post();
           $author_id = $post->post_author;
@@ -169,10 +165,6 @@ function add_flayyer_presenter($presenters)
           if (get_option('flayyer_default_author_template')) {
             $template = get_option('flayyer_default_author_template');
           }
-          $variables_default = json_decode(get_option('flayyer_default_author_variables'), true);
-          if ($variables_default) {
-            $variables = array_merge($variables, $variables_default);
-          }
 
           // https://codex.wordpress.org/Author_Templates
           $author = (isset($_GET['author_name'])) ? get_user_by('slug', $_GET['author_name']) : get_userdata($_GET['author']);
@@ -192,10 +184,6 @@ function add_flayyer_presenter($presenters)
           if (get_option('flayyer_default_category_template')) {
             $template = get_option('flayyer_default_category_template');
           }
-          $variables_default = json_decode(get_option('flayyer_default_category_variables'), true);
-          if ($variables_default) {
-            $variables = array_merge($variables, $variables_default);
-          }
           $variables_local = array(
             'title' => $this->replace_vars("%%term_title%%"),
             'description' => $this->replace_vars("%%term_description%%") ?? $this->replace_vars("%%category_description%%"),
@@ -205,10 +193,6 @@ function add_flayyer_presenter($presenters)
         } else if ($is_page) {
           if (get_option('flayyer_default_page_template')) {
             $template = get_option('flayyer_default_page_template');
-          }
-          $variables_default = json_decode(get_option('flayyer_default_page_variables'), true);
-          if ($variables_default) {
-            $variables = array_merge($variables, $variables_default);
           }
           $variables_local = array(
             'title' => \get_the_title(),

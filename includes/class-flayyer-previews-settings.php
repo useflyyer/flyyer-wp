@@ -223,12 +223,45 @@ class FLAYYER_Previews_Settings
         ),
         array(
           'id'          => 'default_template',
-          'label'       => __('Template (default)', 'flayyer-previews'),
+          'label'       => __('🌐 Template (default)', 'flayyer-previews'),
           'description' => __('Main template for your root path and the default/fallback template for other types.', 'flayyer-previews'),
           'type'        => 'text',
           'default'     => 'main',
           'placeholder' => __('main', 'flayyer-previews'),
         ),
+        array(
+          'id'          => 'default_post_template',
+          'label'       => __('✏️ Posts template', 'flayyer-previews'),
+          'description' => __('Overrides "main" template. Each post will use this template to generate its own preview.', 'flayyer-previews'),
+          'type'        => 'text',
+          'default'     => 'post',
+          'placeholder' => __('post', 'flayyer-previews'),
+        ),
+        array(
+          'id'          => 'default_author_template',
+          'label'       => __('😃 Author/Profiles template', 'flayyer-previews'),
+          'description' => __('Overrides "main" template. Each author/profile will use this template to generate its own preview.', 'flayyer-previews'),
+          'type'        => 'text',
+          'default'     => 'author',
+          'placeholder' => __('author', 'flayyer-previews'),
+        ),
+        array(
+          'id'          => 'default_page_template',
+          'label'       => __('📃 Pages template', 'flayyer-previews'),
+          'description' => __('Overrides "main" template. Each page will use this template to generate its own preview.', 'flayyer-previews'),
+          'type'        => 'text',
+          'default'     => 'page',
+          'placeholder' => __('page', 'flayyer-previews'),
+        ),
+        array(
+          'id'          => 'default_category_template',
+          'label'       => __('🏷 Categories template', 'flayyer-previews'),
+          'description' => __('Overrides "main" template. Each category/tag will use this template to generate its own preview.', 'flayyer-previews'),
+          'type'        => 'text',
+          'default'     => 'category',
+          'placeholder' => __('category', 'flayyer-previews'),
+        ),
+
         array(
           'id'          => 'default_variables',
           'label'       => __('Variables (default)', 'flayyer-previews'),
@@ -256,102 +289,6 @@ class FLAYYER_Previews_Settings
             'png'    => 'PNG',
           ),
           'default'     => 'jpeg',
-        ),
-      ),
-    );
-
-    $settings['posts'] = array(
-      'title'       => __('✏️ "Post" type', 'flayyer-previews'),
-      'description' => __('General configuration. Need help? Contact: <a href="mailto:help@flayyer.com">help@flayyer.com</a>', 'flayyer-previews'),
-      'fields'      => array(
-        array(
-          'id'          => 'default_post_template',
-          'label'       => __('Template', 'flayyer-previews'),
-          'description' => __('Overrides "main" template. Each post will use this template to generate its own preview.', 'flayyer-previews'),
-          'type'        => 'text',
-          'default'     => 'post',
-          'placeholder' => __('post', 'flayyer-previews'),
-        ),
-
-        array(
-          'id'          => 'default_post_variables',
-          'label'       => __('Variables', 'flayyer-previews'),
-          'description' => __('Advanced | This value is optional, but please enter JSON if you set it up.', 'flayyer-previews'),
-          'type'        => 'textarea',
-          'default'     => '',
-          'placeholder' => __('{}', 'flayyer-previews'),
-        ),
-      ),
-    );
-
-    $settings['author'] = array(
-      'title'       => __('😃 "Author/Profile" type', 'flayyer-previews'),
-      'description' => __('General configuration. Need help? Contact: <a href="mailto:help@flayyer.com">help@flayyer.com</a>', 'flayyer-previews'),
-      'fields'      => array(
-        array(
-          'id'          => 'default_author_template',
-          'label'       => __('Template', 'flayyer-previews'),
-          'description' => __('Overrides "main" template. Each author/profile will use this template to generate its own preview.', 'flayyer-previews'),
-          'type'        => 'text',
-          'default'     => 'author',
-          'placeholder' => __('author', 'flayyer-previews'),
-        ),
-
-        array(
-          'id'          => 'default_author_variables',
-          'label'       => __('Variables', 'flayyer-previews'),
-          'description' => __('Advanced | This value is optional, but please enter JSON if you set it up.', 'flayyer-previews'),
-          'type'        => 'textarea',
-          'default'     => '',
-          'placeholder' => __('{}', 'flayyer-previews'),
-        ),
-      ),
-    );
-
-    $settings['page'] = array(
-      'title'       => __('📃 "Page" type', 'flayyer-previews'),
-      'description' => __('General configuration. Need help? Contact: <a href="mailto:help@flayyer.com" target="_blank">help@flayyer.com</a>', 'flayyer-previews'),
-      'fields'      => array(
-        array(
-          'id'          => 'default_page_template',
-          'label'       => __('Template', 'flayyer-previews'),
-          'description' => __('Overrides "main" template. Each page will use this template to generate its own preview.', 'flayyer-previews'),
-          'type'        => 'text',
-          'default'     => 'page',
-          'placeholder' => __('page', 'flayyer-previews'),
-        ),
-
-        array(
-          'id'          => 'default_page_variables',
-          'label'       => __('Variables', 'flayyer-previews'),
-          'description' => __('Advanced | This value is optional, but please enter JSON if you set it up.', 'flayyer-previews'),
-          'type'        => 'textarea',
-          'default'     => '',
-          'placeholder' => __('{}', 'flayyer-previews'),
-        ),
-      ),
-    );
-
-    $settings['categories'] = array(
-      'title'       => __('🏷 "Category" type', 'flayyer-previews'),
-      'description' => __('General configuration. Need help? Contact: <a href="mailto:help@flayyer.com">help@flayyer.com</a>', 'flayyer-previews'),
-      'fields'      => array(
-        array(
-          'id'          => 'default_category_template',
-          'label'       => __('Template', 'flayyer-previews'),
-          'description' => __('Overrides "main" template. Each category/tag will use this template to generate its own preview.', 'flayyer-previews'),
-          'type'        => 'text',
-          'default'     => 'category',
-          'placeholder' => __('category', 'flayyer-previews'),
-        ),
-
-        array(
-          'id'          => 'default_category_variables',
-          'label'       => __('Variables', 'flayyer-previews'),
-          'description' => __('Advanced | This value is optional, but please enter JSON if you set it up.', 'flayyer-previews'),
-          'type'        => 'textarea',
-          'default'     => '',
-          'placeholder' => __('{}', 'flayyer-previews'),
         ),
       ),
     );
