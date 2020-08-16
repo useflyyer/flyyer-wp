@@ -61,7 +61,7 @@ class FLAYYER_Previews_Settings
   {
     $this->parent = $parent;
 
-    $this->base = 'wpt_';
+    $this->base = 'flayyer_';
 
     // Initialise settings.
     add_action('init', array($this, 'init_settings'), 11);
@@ -206,80 +206,58 @@ class FLAYYER_Previews_Settings
       'description' => __('Basic configuration. Need help? Contact: <a href="mailto:help@flayyer.com">help@flayyer.com</a>', 'flayyer-previews'),
       'fields'      => array(
         array(
-          'id'          => 'text_field',
-          'label'       => __('Some Text', 'flayyer-previews'),
-          'description' => __('This is a standard text field.', 'flayyer-previews'),
+          'id'          => 'default_tenant',
+          'label'       => __('Default tenant (company)', 'flayyer-previews'),
+          'description' => __('You can override this value in more specific views.', 'flayyer-previews'),
           'type'        => 'text',
           'default'     => '',
-          'placeholder' => __('Placeholder text', 'flayyer-previews'),
+          'placeholder' => __('my-company', 'flayyer-previews'),
         ),
         array(
-          'id'          => 'password_field',
-          'label'       => __('A Password', 'flayyer-previews'),
-          'description' => __('This is a standard password field.', 'flayyer-previews'),
-          'type'        => 'password',
+          'id'          => 'default_deck',
+          'label'       => __('Default deck', 'flayyer-previews'),
+          'description' => __('You can override this value in more specific views.', 'flayyer-previews'),
+          'type'        => 'text',
           'default'     => '',
-          'placeholder' => __('Placeholder text', 'flayyer-previews'),
+          'placeholder' => __('my-deck', 'flayyer-previews'),
         ),
         array(
-          'id'          => 'secret_text_field',
-          'label'       => __('Some Secret Text', 'flayyer-previews'),
-          'description' => __('This is a secret text field - any data saved here will not be displayed after the page has reloaded, but it will be saved.', 'flayyer-previews'),
-          'type'        => 'text_secret',
+          'id'          => 'default_template',
+          'label'       => __('Default template', 'flayyer-previews'),
+          'description' => __('You can override this value in more specific views.', 'flayyer-previews'),
+          'type'        => 'text',
           'default'     => '',
-          'placeholder' => __('Placeholder text', 'flayyer-previews'),
+          'placeholder' => __('hello', 'flayyer-previews'),
         ),
+
         array(
-          'id'          => 'text_block',
-          'label'       => __('A Text Block', 'flayyer-previews'),
-          'description' => __('This is a standard text area.', 'flayyer-previews'),
+          'id'          => 'default_variables',
+          'label'       => __('Default variables', 'flayyer-previews'),
+          'description' => __('This value is optional, but please enter JSON if you set it up.', 'flayyer-previews'),
           'type'        => 'textarea',
           'default'     => '',
-          'placeholder' => __('Placeholder text for this textarea', 'flayyer-previews'),
+          'placeholder' => __('{}', 'flayyer-previews'),
         ),
+
         array(
-          'id'          => 'single_checkbox',
-          'label'       => __('An Option', 'flayyer-previews'),
-          'description' => __('A standard checkbox - if you save this option as checked then it will store the option as \'on\', otherwise it will be an empty string.', 'flayyer-previews'),
-          'type'        => 'checkbox',
-          'default'     => '',
+          'id'          => 'default_version',
+          'label'       => __('Version', 'flayyer-previews'),
+          'description' => __('Use "_" to always grab the latest version. You can override this value in more specific views.', 'flayyer-previews'),
+          'type'        => 'text',
+          'default'     => '_',
+          'placeholder' => __('_', 'flayyer-previews'),
         ),
+
         array(
-          'id'          => 'select_box',
-          'label'       => __('A Select Box', 'flayyer-previews'),
-          'description' => __('A standard select box.', 'flayyer-previews'),
+          'id'          => 'default_extension',
+          'label'       => __('Extension', 'flayyer-previews'),
+          'description' => __('Use PNG for vector based and JPEG for templates with photos.', 'flayyer-previews'),
           'type'        => 'select',
           'options'     => array(
-            'drupal'    => 'Drupal',
-            'joomla'    => 'Joomla',
-            'wordpress' => 'WordPress',
+            'jpeg'    => 'JPEG',
+            'png'    => 'PNG',
           ),
-          'default'     => 'wordpress',
-        ),
-        array(
-          'id'          => 'radio_buttons',
-          'label'       => __('Some Options', 'flayyer-previews'),
-          'description' => __('A standard set of radio buttons.', 'flayyer-previews'),
-          'type'        => 'radio',
-          'options'     => array(
-            'superman' => 'Superman',
-            'batman'   => 'Batman',
-            'ironman'  => 'Iron Man',
-          ),
-          'default'     => 'batman',
-        ),
-        array(
-          'id'          => 'multiple_checkboxes',
-          'label'       => __('Some Items', 'flayyer-previews'),
-          'description' => __('You can select multiple items and they will be stored as an array.', 'flayyer-previews'),
-          'type'        => 'checkbox_multi',
-          'options'     => array(
-            'square'    => 'Square',
-            'circle'    => 'Circle',
-            'rectangle' => 'Rectangle',
-            'triangle'  => 'Triangle',
-          ),
-          'default'     => array('circle', 'triangle'),
+          'default'     => 'jpeg',
         ),
       ),
     );
