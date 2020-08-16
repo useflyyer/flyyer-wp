@@ -4,20 +4,20 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "2881180a5f0a6a968e4a8fe9c0505c0b",
+    "content-hash": "44bed82d1ec66a665235fa96ca2392e8",
     "packages": [
         {
             "name": "flayyer/flayyer",
-            "version": "0.1.2",
+            "version": "0.1.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/flayyer/flayyer-php.git",
-                "reference": "2f026702278a06e96fe3cdcaabdb725496b1663a"
+                "reference": "ce069f0b0a151e5d7ecede687119f6baf45c3172"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/flayyer/flayyer-php/zipball/2f026702278a06e96fe3cdcaabdb725496b1663a",
-                "reference": "2f026702278a06e96fe3cdcaabdb725496b1663a",
+                "url": "https://api.github.com/repos/flayyer/flayyer-php/zipball/ce069f0b0a151e5d7ecede687119f6baf45c3172",
+                "reference": "ce069f0b0a151e5d7ecede687119f6baf45c3172",
                 "shasum": ""
             },
             "require": {
@@ -49,7 +49,7 @@
                 "flayyer-php",
                 "qs"
             ],
-            "time": "2020-08-15T18:58:50+00:00"
+            "time": "2020-08-15T23:51:48+00:00"
         },
         {
             "name": "squizlabs/php_codesniffer",
