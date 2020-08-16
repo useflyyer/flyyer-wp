@@ -2,7 +2,7 @@
 
 /**
  * Plugin Name: FLAYYER Previews
- * Version: 1.0.0
+  * Version: 1.0.5
  * Plugin URI: https://flayyer.com/
  * Description: Generate dynamic and meaningful previews for your links. Use FLAYYER smart urls to pass values to our image-rendering service and make each URL's preview unique.
  * Author: FLAYYER.com
