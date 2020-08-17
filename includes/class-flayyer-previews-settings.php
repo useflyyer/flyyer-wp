@@ -203,7 +203,25 @@ class FLAYYER_Previews_Settings
 
     $settings['general'] = array(
       'title'       => __('FLAYYER general settings', 'flayyer-previews'),
-      'description' => __('General configuration. Need help? Contact: <a href="mailto:help@flayyer.com">help@flayyer.com</a>', 'flayyer-previews'),
+      'description' => __(<<<EOT
+        <p>
+          FLAYYER is a service where you can provide 'templates' and we will generate a unique URL which you can use to control the rendering of an image.
+          These smart URL accepts parameters as 'variables'. Here in Wordpress we pass 'title' and 'description' variables to FLAYYER services to generate these images.
+        </p>
+        <p>
+          To create a deck of templates please refer to <a href="https://app.flayyer.com/docs?ref=wp-plugin" target="_blank" rel="noreferrer">FLAYYER DOCS</a>. Once you have your templates uploaded to our services, you can copy the 'deck' and 'template' values to this form to use those templates.
+        </p>
+        <p>
+          <strong>Requirements:</strong>
+        </p>
+        <ul>
+          <li>- <a href="https://yoast.com/" target="_blank" rel="noreferrer">Yoast SEO</a> (plugin) 14.0.0 or newer.</li>
+          <li>- <a href="https://flayyer.com?ref=wp-plugin" target="_blank" rel="noreferrer">FLAYYER.com</a> account.</li>
+        </ul>
+        <p>
+          Need help? bug report? or feature request? Please contact: <a href="mailto:help@flayyer.com">help@flayyer.com</a>, we are happy to assist you.
+        </p>
+      EOT, 'flayyer-previews'),
       'fields'      => array(
         array(
           'id'          => 'default_tenant',
