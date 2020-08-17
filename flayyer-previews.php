@@ -150,7 +150,7 @@ function add_flayyer_presenter($presenters)
             'last_name' => get_the_author_meta('last_name', $author_id),
             'display_name' => get_the_author_meta('display_name', $author_id),
             'nickname' => get_the_author_meta('nickname', $author_id),
-            'avatar' => get_avatar_url($author_id),
+            'avatar' => get_avatar_url($author_id, array('size' => 512)),
           );
 
           $variables_local = array(
@@ -202,7 +202,6 @@ function add_flayyer_presenter($presenters)
           $variables = array_merge($variables_local, $variables);
         } else if ($is_home) {
           // Keep 'home' template
-          // TODO: remove title
         }
 
         $flayyer = new Flayyer($tenant, $deck, $template, $version, $extension, $variables);
