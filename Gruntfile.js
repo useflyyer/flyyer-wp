@@ -1,5 +1,3 @@
-const pkg = require('./package.json');
-
 /* jshint node:true */
 module.exports = function (grunt) {
   'use strict';
@@ -84,7 +82,7 @@ module.exports = function (grunt) {
     compress: {
       main: {
         options: {
-          archive: `dist/flayyer-${pkg['version']}.zip`
+          archive: `dist/flayyer-wordpress-plugin.zip`
         },
         files: [
           { src: ['assets/css/*.css'], filter: 'isFile' }, // includes css files in css path

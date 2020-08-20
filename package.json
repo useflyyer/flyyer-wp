@@ -8,7 +8,7 @@
     "build": "grunt build"
   },
   "devDependencies": {
-    "grunt": "^1.0.3",
+    "grunt": "^1.3.0",
     "grunt-contrib-compress": "^1.6.0",
     "grunt-contrib-cssmin": "~3.0.0",
     "grunt-contrib-less": "^2.0.0",
