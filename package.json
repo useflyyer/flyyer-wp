@@ -1,7 +1,7 @@
 {
   "name": "flayyer-wp-builder",
   "title": "Builder scripts",
-  "version": "1.0.5",
+  "version": "1.1.1",
   "homepage": "https://github.com/flayyer/flayyer-wp",
   "main": "Gruntfile.js",
   "scripts": {

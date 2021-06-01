@@ -200,114 +200,57 @@ class FLAYYER_Previews_Settings
    */
   private function settings_fields()
   {
-
+    $home_url = home_url('');
+    $project_default = str_replace(".", "-", str_replace("www.", "", substr($home_url, strpos($home_url, "://") + 3)));
     $settings['general'] = array(
       'title'       => __('FLAYYER general settings', 'flayyer-previews'),
       'description' => __(<<<EOT
         <p>
-          FLAYYER is a service where you can provide 'templates' and we will generate a unique URL which you can use to control the rendering of an image.
-          These smart URL accepts parameters as 'variables'. Here in Wordpress we pass 'title' and 'description' variables to FLAYYER services to generate these images.
+          FlayyerAI is the platform for your link previews and social media images.
         </p>
         <p>
-          To create a deck of templates please refer to <a href="https://app.flayyer.com/docs?ref=wp-plugin" target="_blank" rel="noreferrer">FLAYYER DOCS</a>. Once you have your templates uploaded to our services, you can copy the 'deck' and 'template' values to this form to use those templates.
+          They are automatically enriched from your website's content and fit for every social platform format (no effort required).
         </p>
         <p>
-          <strong>Requirements:</strong>
+          Choose the template you like the most or just leave our AI system do the work for you.
         </p>
-        <ul>
-          <li>- <a href="https://yoast.com/" target="_blank" rel="noreferrer">Yoast SEO</a> (plugin) 14.0.0 or newer.</li>
-          <li>- <a href="https://flayyer.com?ref=wp-plugin" target="_blank" rel="noreferrer">FLAYYER.com</a> account.</li>
-        </ul>
         <p>
-          Need help? bug report? or feature request? Please contact: <a href="mailto:help@flayyer.com">help@flayyer.com</a>, we are happy to assist you.
+          Find your <code>project-slug</code> in <a href="https://flayyer.com/auth/login?ref=wp-plugin" target="_blank" rel="noreferrer">your dashboard</a>. If you don't have a project yet, <a href="https://flayyer.com/get-started?ref=wp-plugin" target="_blank" rel="noreferrer">create one here</a>.
+        </p>
+        <p>
+          Read the full integration guide <a href="https://docs.flayyer.com/guides/php/wordpress?ref=wp-plugin" target="_blank" rel="noreferrer">here</a>.
         </p>
       EOT, 'flayyer-previews'),
       'fields'      => array(
         array(
-          'id'          => 'default_tenant',
-          'label'       => __('Tenant/company', 'flayyer-previews'),
-          'description' => __('This is the name of your company', 'flayyer-previews'),
+          'id'          => 'project_slug',
+          'label'       => __('Project slug', 'flayyer-previews'),
+          'description' => __('This is your project slug, find it in your dashboard (it defaults to your domain name). Your dashboard: https://flayyer.com/auth/login?ref=wp-plugin', 'flayyer-previews'),
           'type'        => 'text',
-          'default'     => '',
-          'placeholder' => __('my-company', 'flayyer-previews'),
+          'default'     => $project_default,
+          'placeholder' => __('your-project-slug', 'flayyer-previews'),
         ),
-        array(
-          'id'          => 'default_deck',
-          'label'       => __('Deck', 'flayyer-previews'),
-          'description' => __('The folder that contains all of your templates', 'flayyer-previews'),
-          'type'        => 'text',
-          'default'     => '',
-          'placeholder' => __('my-deck', 'flayyer-previews'),
-        ),
-        array(
-          'id'          => 'default_template',
-          'label'       => __('🌐 Template (default)', 'flayyer-previews'),
-          'description' => __('Main template for your root path and the default/fallback template for other types.', 'flayyer-previews'),
-          'type'        => 'text',
-          'default'     => 'main',
-          'placeholder' => __('main', 'flayyer-previews'),
-        ),
-        array(
-          'id'          => 'default_post_template',
-          'label'       => __('✏️ Posts template', 'flayyer-previews'),
-          'description' => __('Overrides "main" template. Each post will use this template to generate its own preview.', 'flayyer-previews'),
-          'type'        => 'text',
-          'default'     => 'post',
-          'placeholder' => __('post', 'flayyer-previews'),
-        ),
-        array(
-          'id'          => 'default_author_template',
-          'label'       => __('😃 Author/Profiles template', 'flayyer-previews'),
-          'description' => __('Overrides "main" template. Each author/profile will use this template to generate its own preview.', 'flayyer-previews'),
-          'type'        => 'text',
-          'default'     => 'author',
-          'placeholder' => __('author', 'flayyer-previews'),
-        ),
-        array(
-          'id'          => 'default_page_template',
-          'label'       => __('📃 Pages template', 'flayyer-previews'),
-          'description' => __('Overrides "main" template. Each page will use this template to generate its own preview.', 'flayyer-previews'),
-          'type'        => 'text',
-          'default'     => 'page',
-          'placeholder' => __('page', 'flayyer-previews'),
-        ),
-        array(
-          'id'          => 'default_category_template',
-          'label'       => __('🏷 Categories template', 'flayyer-previews'),
-          'description' => __('Overrides "main" template. Each category/tag will use this template to generate its own preview.', 'flayyer-previews'),
-          'type'        => 'text',
-          'default'     => 'category',
-          'placeholder' => __('category', 'flayyer-previews'),
-        ),
-
-        array(
-          'id'          => 'default_variables',
-          'label'       => __('Variables (default)', 'flayyer-previews'),
-          'description' => __('Advanced | This value is optional, but please enter JSON if you set it up.', 'flayyer-previews'),
-          'type'        => 'textarea',
-          'default'     => '',
-          'placeholder' => __('{}', 'flayyer-previews'),
-        ),
-        array(
-          'id'          => 'default_version',
-          'label'       => __('Version', 'flayyer-previews'),
-          'description' => __('Use "_" to always grab the latest version.', 'flayyer-previews'),
-          'type'        => 'text',
-          'default'     => '_',
-          'placeholder' => __('_', 'flayyer-previews'),
-        ),
-
-        array(
-          'id'          => 'default_extension',
-          'label'       => __('Extension', 'flayyer-previews'),
-          'description' => __('Use PNG for vector based and JPEG for templates with photos.', 'flayyer-previews'),
-          'type'        => 'select',
-          'options'     => array(
-            'jpeg'    => 'JPEG',
-            'png'    => 'PNG',
-          ),
-          'default'     => 'jpeg',
-        ),
+        // array(
+        //   'id'          => 'secret_key',
+        //   'label'       => __('[Optional] Secret key', 'flayyer-previews'),
+        //   'description' => __('For Signed URLs. Find it in Your dashboard > your-project > Advanced settings > Signed URLs.', 'flayyer-previews'),
+        //   'type'        => 'password',
+        //   'default'     => '',
+        //   'placeholder' => '',
+        //   'autocomplete' => 'off',
+        // ),
+        // array(
+        //   'id'          => 'strategy',
+        //   'label'       => __('[Optional] Signing method', 'flayyer-previews'),
+        //   'description' => __('Define your signature strategy. You must have provided a secret key.', 'flayyer-previews'),
+        //   'type'        => 'select',
+        //   'options'     => array(
+        //     'None'    => 'None',
+        //     'HMAC'    => 'HMAC',
+        //     // 'JWT'    => 'JWT', // TODO: JWT is failing
+        //   ),
+        //   'default'     => 'None',
+        // ),
       ),
     );
 

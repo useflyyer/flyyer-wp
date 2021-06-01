@@ -4,23 +4,78 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "f06629b846125418dda6d48698d93f2c",
+    "content-hash": "11ce007838b240f691a3aaab91c0bad8",
     "packages": [
         {
-            "name": "flayyer/flayyer",
-            "version": "0.1.5",
+            "name": "firebase/php-jwt",
+            "version": "v5.2.1",
             "source": {
                 "type": "git",
-                "url": "https://github.com/flayyer/flayyer-php.git",
-                "reference": "ec3e99c096a6b2b14d3d92a6114cf13b958a9d75"
+                "url": "https://github.com/firebase/php-jwt.git",
+                "reference": "f42c9110abe98dd6cfe9053c49bc86acc70b2d23"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/flayyer/flayyer-php/zipball/ec3e99c096a6b2b14d3d92a6114cf13b958a9d75",
-                "reference": "ec3e99c096a6b2b14d3d92a6114cf13b958a9d75",
+                "url": "https://api.github.com/repos/firebase/php-jwt/zipball/f42c9110abe98dd6cfe9053c49bc86acc70b2d23",
+                "reference": "f42c9110abe98dd6cfe9053c49bc86acc70b2d23",
                 "shasum": ""
             },
             "require": {
+                "php": ">=5.3.0"
+            },
+            "require-dev": {
+                "phpunit/phpunit": ">=4.8 <=9"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Firebase\\JWT\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-3-Clause"
+            ],
+            "authors": [
+                {
+                    "name": "Neuman Vong",
+                    "email": "neuman+pear@twilio.com",
+                    "role": "Developer"
+                },
+                {
+                    "name": "Anant Narayanan",
+                    "email": "anant@php.net",
+                    "role": "Developer"
+                }
+            ],
+            "description": "A simple library to encode and decode JSON Web Tokens (JWT) in PHP. Should conform to the current spec.",
+            "homepage": "https://github.com/firebase/php-jwt",
+            "keywords": [
+                "jwt",
+                "php"
+            ],
+            "support": {
+                "issues": "https://github.com/firebase/php-jwt/issues",
+                "source": "https://github.com/firebase/php-jwt/tree/v5.2.1"
+            },
+            "time": "2021-02-12T00:02:00+00:00"
+        },
+        {
+            "name": "flayyer/flayyer",
+            "version": "1.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/flayyer/flayyer-php.git",
+                "reference": "ca75931772a757dbcbc22422d509a3712d305627"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/flayyer/flayyer-php/zipball/ca75931772a757dbcbc22422d509a3712d305627",
+                "reference": "ca75931772a757dbcbc22422d509a3712d305627",
+                "shasum": ""
+            },
+            "require": {
+                "firebase/php-jwt": "^5.2",
                 "php": "^7.1"
             },
             "require-dev": {
@@ -49,7 +104,11 @@
                 "flayyer-php",
                 "qs"
             ],
-            "time": "2020-08-16T19:26:34+00:00"
+            "support": {
+                "issues": "https://github.com/flayyer/flayyer-php/issues",
+                "source": "https://github.com/flayyer/flayyer-php/tree/1.0.0"
+            },
+            "time": "2021-04-21T19:59:49+00:00"
         },
         {
             "name": "squizlabs/php_codesniffer",
@@ -1138,5 +1197,5 @@
         "php": "^7.1"
     },
     "platform-dev": [],
-    "plugin-api-version": "1.1.0"
+    "plugin-api-version": "2.0.0"
 }
