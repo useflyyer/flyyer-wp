@@ -201,7 +201,7 @@ class FLYYER_Previews_Settings
   private function settings_fields()
   {
     $home_url = home_url('');
-    $project_default = str_replace(".", "-", str_replace("www.", "", substr($home_url, strpos($home_url, "://") + 3)));
+    // $project_default = str_replace(".", "-", str_replace("www.", "", substr($home_url, strpos($home_url, "://") + 3)));
     $settings['general'] = array(
       'title'       => __('FLYYER general settings', 'flyyer-previews'),
       'description' => __(<<<EOT
@@ -209,13 +209,13 @@ class FLYYER_Previews_Settings
           Flyyer is the platform for your link previews and social media images.
         </p>
         <p>
-          They are automatically enriched from your website's content and fit for every social platform format (no effort required).
+          Previews are enriched from your website's content and fit for every format (no effort required).
         </p>
         <p>
           Choose the template you like the most or just leave our AI system do the work for you.
         </p>
         <p>
-          Find your <code>project-slug</code> in <a href="https://flyyer.io/auth/login?ref=wp-plugin" target="_blank" rel="noreferrer">your dashboard</a>. If you don't have a project yet, <a href="https://flyyer.io/get-started?ref=wp-plugin" target="_blank" rel="noreferrer">create one here</a>.
+          <strong>Find your <code>project-slug</code> <a href="https://www.flyyer.io/dashboard/_/projects/_/integrate?ref=wp-plugin" target="_blank" rel="noreferrer">here</a>. If you don't have a project yet, <a href="https://flyyer.io/get-started?ref=wp-plugin" target="_blank" rel="noreferrer">create one here</a>.</strong>
         </p>
         <p>
           Read the full integration guide <a href="https://docs.flyyer.io/guides/php/wordpress?ref=wp-plugin" target="_blank" rel="noreferrer">here</a>.
@@ -225,9 +225,9 @@ class FLYYER_Previews_Settings
         array(
           'id'          => 'project_slug',
           'label'       => __('Project slug', 'flyyer-previews'),
-          'description' => __('This is your project slug, find it in your dashboard (it defaults to your domain name). Your dashboard: https://flyyer.io/auth/login?ref=wp-plugin', 'flyyer-previews'),
+          // 'description' => __('', 'flyyer-previews'),
           'type'        => 'text',
-          'default'     => $project_default,
+          // 'default'     => $project_default,
           'placeholder' => __('your-project-slug', 'flyyer-previews'),
         ),
         // array(
