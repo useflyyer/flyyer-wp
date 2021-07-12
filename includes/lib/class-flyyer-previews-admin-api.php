@@ -13,7 +13,7 @@ if (!defined('ABSPATH')) {
 /**
  * Admin API class.
  */
-class FLAYYER_Previews_Admin_API
+class FLYYER_Previews_Admin_API
 {
 
   /**
@@ -237,13 +237,13 @@ class FLAYYER_Previews_Admin_API
 
     switch ($type) {
       case 'text':
-        $data = esc_attr($data);
+        $data = sanitize_text_field($data);
         break;
       case 'url':
         $data = esc_url($data);
         break;
       case 'email':
-        $data = is_email($data);
+        $data = is_email(sanitize_email($data));
         break;
     }
 

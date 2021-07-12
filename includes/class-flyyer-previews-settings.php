@@ -271,11 +271,11 @@ class FLYYER_Previews_Settings
       // Check posted/selected tab.
       //phpcs:disable
       $current_section = '';
-      if (isset($_POST['tab']) && $_POST['tab']) {
-        $current_section = $_POST['tab'];
+      if (isset($_POST['tab'])) {
+        $current_section = sanitize_text_field($_POST['tab']);
       } else {
-        if (isset($_GET['tab']) && $_GET['tab']) {
-          $current_section = $_GET['tab'];
+        if (isset($_GET['tab'])) {
+          $current_section = sanitize_text_field($_GET['tab']);
         }
       }
       //phpcs:enable
@@ -349,7 +349,7 @@ class FLYYER_Previews_Settings
     $tab = '';
     //phpcs:disable
     if (isset($_GET['tab']) && $_GET['tab']) {
-      $tab .= $_GET['tab'];
+      $tab .= sanitize_text_field($_GET['tab']);
     }
     //phpcs:enable
 

@@ -1,8 +1,8 @@
-# Copyright (C) 2014 FLAYYER Previews
-# This file is distributed under the same license as the FLAYYER Previews package.
+# Copyright (C) 2014 FLYYER Previews
+# This file is distributed under the same license as the FLYYER Previews package.
 msgid ""
 msgstr ""
-"Project-Id-Version: FLAYYER Previews 1.0\n"
+"Project-Id-Version: FLYYER Previews 1.0\n"
 "Report-Msgid-Bugs-To: http://wordpress.org/tag/WordPress-Plugin-Template\n"
 "POT-Creation-Date: 2014-04-07 11:28:06+00:00\n"
 "MIME-Version: 1.0\n"
@@ -391,7 +391,7 @@ msgstr ""
 msgid "Cheatin&#8217; huh?"
 msgstr ""
 #. Plugin Name of the plugin/theme
-msgid "FLAYYER Previews"
+msgid "FLYYER Previews"
 msgstr ""
 
 #. Plugin URI of the plugin/theme

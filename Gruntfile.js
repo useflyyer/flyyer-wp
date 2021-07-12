@@ -90,7 +90,7 @@ module.exports = function (grunt) {
           { src: ['assets/**', '!assets/js/**/*', '!assets/css/**/*'], filter: 'isFile' }, // includes any other assets outside js/css
           { src: ['includes/**'], filter: 'isFile' }, //includes files in includes path
           { src: ['lang/**'], filter: 'isFile' }, //includes files in lang path
-          { src: ['vendor/**'], filter: 'isFile' }, //includes files in lang path
+          { src: ['vendor/flyyer/**'], filter: 'isFile' }, //includes flyyer files in vendor path
           { src: ['*.php', 'LICENSE', '*.txt'], filter: 'isFile' } //includes base directory files
         ]
       }

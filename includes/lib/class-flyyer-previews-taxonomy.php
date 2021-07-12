@@ -13,7 +13,7 @@ if (!defined('ABSPATH')) {
 /**
  * Taxonomy functions class.
  */
-class FLAYYER_Previews_Taxonomy
+class FLYYER_Previews_Taxonomy
 {
 
   /**

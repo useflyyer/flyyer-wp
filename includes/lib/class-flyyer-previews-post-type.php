@@ -13,7 +13,7 @@ if (!defined('ABSPATH')) {
 /**
  * Post type declaration class.
  */
-class FLAYYER_Previews_Post_Type
+class FLYYER_Previews_Post_Type
 {
 
   /**

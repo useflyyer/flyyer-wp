@@ -3,8 +3,8 @@ Contributors: lopezjurip, fnmendez
 Donate link: https://flyyer.io
 Tags: flyyer, seo, image, preview, wordpress, plugin
 Requires at least: 3.9
-Tested up to: 4.0
-Stable tag: 1.0
+Tested up to: 5.7
+Stable tag: 1.2.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -56,15 +56,31 @@ Installing "FLYYER Previews" can be done either by searching for "FLYYER Preview
 
 = What is the plugin template for? =
 
-You might not need this service if you have a small business, because you can craft by hand any image preview you may need. However if you have a lot of content, maybe this plugin will suit you. See https://app.flyyer.io/en/docs.
+You might not need this service if you have a small business, because you can craft by hand any image preview you may need. However if you have a lot of content, maybe this plugin will suit you. See https://docs.flayyer.com/guides/.
 
 == Changelog ==
+
+= 1.2 =
+* 2021-07-12
+* Update Flyyer company name & fixes
+
+= 1.1 =
+* 2021-05-31
+* Upgrade to simplified Flyyer version
 
 = 1.0 =
 * 2020-08-15
 * Initial release
 
 == Upgrade Notice ==
+
+= 1.2 =
+* 2021-07-12
+* Update Flyyer company name & fixes
+
+= 1.1 =
+* 2021-05-31
+* Upgrade to simplified Flyyer version
 
 = 1.0 =
 * 2020-08-15

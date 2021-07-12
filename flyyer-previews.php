@@ -2,12 +2,12 @@
 
 /**
  * Plugin Name: Flyyer Previews
- * Version: 1.1.6
+ * Version: 1.2.0
  * Plugin URI: https://flyyer.io/
  * Description: Flyyer is the platform for your social media images. Generate images from your website's content and fit for every social platform format (no effort required).
  * Author: FLYYER.io
- * Requires at least: 4.0
- * Tested up to: 4.0
+ * Requires at least: 3.9
+ * Tested up to: 5.7
  *
  * Text Domain: flyyer-previews
  * Domain Path: /lang/
@@ -39,7 +39,7 @@ require_once 'vendor/flyyer/flyyer/src/Flyyer.php';
  * @since  1.0.0
  * @return object FLYYER_Previews
  */
-function flyyer_previews(): FLYYER_Previews // TODO: Remove this hint if necessary
+function FLYYER_previews(): FLYYER_Previews // TODO: Remove this hint if necessary
 {
   $instance = FLYYER_Previews::instance(__FILE__, '1.0.0');
 
@@ -50,9 +50,9 @@ function flyyer_previews(): FLYYER_Previews // TODO: Remove this hint if necessa
   return $instance;
 }
 
-flyyer_previews(); // force init
+FLYYER_previews(); // force init
 
-function remove_default_image_presenters($presenters)
+function FLYYER_remove_default_image_presenters($presenters)
 {
   return array_map(function ($presenter) {
     if ($presenter instanceof Yoast\WP\SEO\Presenters\Open_Graph\Image_Presenter) {
@@ -63,7 +63,7 @@ function remove_default_image_presenters($presenters)
     return $presenter;
   }, $presenters);
 }
-add_action('wpseo_frontend_presenters', 'remove_default_image_presenters');
+add_action('wpseo_frontend_presenters', 'FLYYER_remove_default_image_presenters');
 
 /**
  * Adds our custom presenter to the array of presenters.
