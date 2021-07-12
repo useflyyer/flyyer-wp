@@ -16,7 +16,7 @@ Your site can have 100/100 score on Lighthouse or similar, but that's not going 
 
 Remember when YouTube videos used to have very simple thumbnail previews? Those days are over, today every video on YouTube has very well-crafted cover images with text and images, every single video thumbnail wants to be unique.
 
-FLYYER helps you automating the process of generating images for every page of your website.You don't need to manually create all of yours link previews. Just code a couple of templates and use them everywhere.
+FLYYER helps you automating the process of generating images for every page of your website. You don't need to manually create all of yours link previews. Code a template or pick your favorites from the community.
 
 You might need FLYYER if:
 
