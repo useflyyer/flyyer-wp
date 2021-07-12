@@ -13,7 +13,7 @@ if (!defined('ABSPATH')) {
 /**
  * Taxonomy functions class.
  */
-class FLAYYER_Previews_Taxonomy
+class FLYYER_Previews_Taxonomy
 {
 
   /**
@@ -103,20 +103,20 @@ class FLAYYER_Previews_Taxonomy
       'name'                       => $this->plural,
       'singular_name'              => $this->single,
       'menu_name'                  => $this->plural,
-      'all_items'                  => sprintf(__('All %s', 'flayyer-previews'), $this->plural),
-      'edit_item'                  => sprintf(__('Edit %s', 'flayyer-previews'), $this->single),
-      'view_item'                  => sprintf(__('View %s', 'flayyer-previews'), $this->single),
-      'update_item'                => sprintf(__('Update %s', 'flayyer-previews'), $this->single),
-      'add_new_item'               => sprintf(__('Add New %s', 'flayyer-previews'), $this->single),
-      'new_item_name'              => sprintf(__('New %s Name', 'flayyer-previews'), $this->single),
-      'parent_item'                => sprintf(__('Parent %s', 'flayyer-previews'), $this->single),
-      'parent_item_colon'          => sprintf(__('Parent %s:', 'flayyer-previews'), $this->single),
-      'search_items'               => sprintf(__('Search %s', 'flayyer-previews'), $this->plural),
-      'popular_items'              => sprintf(__('Popular %s', 'flayyer-previews'), $this->plural),
-      'separate_items_with_commas' => sprintf(__('Separate %s with commas', 'flayyer-previews'), $this->plural),
-      'add_or_remove_items'        => sprintf(__('Add or remove %s', 'flayyer-previews'), $this->plural),
-      'choose_from_most_used'      => sprintf(__('Choose from the most used %s', 'flayyer-previews'), $this->plural),
-      'not_found'                  => sprintf(__('No %s found', 'flayyer-previews'), $this->plural),
+      'all_items'                  => sprintf(__('All %s', 'flyyer-previews'), $this->plural),
+      'edit_item'                  => sprintf(__('Edit %s', 'flyyer-previews'), $this->single),
+      'view_item'                  => sprintf(__('View %s', 'flyyer-previews'), $this->single),
+      'update_item'                => sprintf(__('Update %s', 'flyyer-previews'), $this->single),
+      'add_new_item'               => sprintf(__('Add New %s', 'flyyer-previews'), $this->single),
+      'new_item_name'              => sprintf(__('New %s Name', 'flyyer-previews'), $this->single),
+      'parent_item'                => sprintf(__('Parent %s', 'flyyer-previews'), $this->single),
+      'parent_item_colon'          => sprintf(__('Parent %s:', 'flyyer-previews'), $this->single),
+      'search_items'               => sprintf(__('Search %s', 'flyyer-previews'), $this->plural),
+      'popular_items'              => sprintf(__('Popular %s', 'flyyer-previews'), $this->plural),
+      'separate_items_with_commas' => sprintf(__('Separate %s with commas', 'flyyer-previews'), $this->plural),
+      'add_or_remove_items'        => sprintf(__('Add or remove %s', 'flyyer-previews'), $this->plural),
+      'choose_from_most_used'      => sprintf(__('Choose from the most used %s', 'flyyer-previews'), $this->plural),
+      'not_found'                  => sprintf(__('No %s found', 'flyyer-previews'), $this->plural),
     );
     //phpcs:enable
     $args = array(
