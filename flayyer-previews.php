@@ -1,19 +1,19 @@
 <?php
 
 /**
- * Plugin Name: Flayyer Previews
+ * Plugin Name: Flyyer Previews
  * Version: 1.1.6
- * Plugin URI: https://flayyer.com/
- * Description: FlayyerAI is the platform for your social media images. Generate images from your website's content and fit for every social platform format (no effort required).
- * Author: FLAYYER.com
+ * Plugin URI: https://flyyer.io/
+ * Description: Flyyer is the platform for your social media images. Generate images from your website's content and fit for every social platform format (no effort required).
+ * Author: FLYYER.io
  * Requires at least: 4.0
  * Tested up to: 4.0
  *
- * Text Domain: flayyer-previews
+ * Text Domain: flyyer-previews
  * Domain Path: /lang/
  *
  * @package WordPress
- * @author Patricio Lopez
+ * @author Flyyer
  * @since 1.0.0
  */
 
@@ -22,35 +22,35 @@ if (!defined('ABSPATH')) {
 }
 
 // Load plugin class files.
-require_once 'includes/class-flayyer-previews.php';
-require_once 'includes/class-flayyer-previews-settings.php';
+require_once 'includes/class-flyyer-previews.php';
+require_once 'includes/class-flyyer-previews-settings.php';
 
 // Load plugin libraries.
-require_once 'includes/lib/class-flayyer-previews-admin-api.php';
-require_once 'includes/lib/class-flayyer-previews-post-type.php';
-require_once 'includes/lib/class-flayyer-previews-taxonomy.php';
+require_once 'includes/lib/class-flyyer-previews-admin-api.php';
+require_once 'includes/lib/class-flyyer-previews-post-type.php';
+require_once 'includes/lib/class-flyyer-previews-taxonomy.php';
 
 // TODO: is autoloading not working?
-require_once 'vendor/flayyer/flayyer/src/FlayyerAI.php';
+require_once 'vendor/flyyer/flyyer/src/Flyyer.php';
 
 /**
- * Returns the main instance of FLAYYER_Previews to prevent the need to use globals.
+ * Returns the main instance of FLYYER_Previews to prevent the need to use globals.
  *
  * @since  1.0.0
- * @return object FLAYYER_Previews
+ * @return object FLYYER_Previews
  */
-function flayyer_previews(): FLAYYER_Previews // TODO: Remove this hint if necessary
+function flyyer_previews(): FLYYER_Previews // TODO: Remove this hint if necessary
 {
-  $instance = FLAYYER_Previews::instance(__FILE__, '1.0.0');
+  $instance = FLYYER_Previews::instance(__FILE__, '1.0.0');
 
   if (is_null($instance->settings)) {
-    $instance->settings = FLAYYER_Previews_Settings::instance($instance);
+    $instance->settings = FLYYER_Previews_Settings::instance($instance);
   }
 
   return $instance;
 }
 
-flayyer_previews(); // force init
+flyyer_previews(); // force init
 
 function remove_default_image_presenters($presenters)
 {
@@ -73,26 +73,26 @@ add_action('wpseo_frontend_presenters', 'remove_default_image_presenters');
  *
  * @return array Presenters with our custom presenter added.
  */
-function add_flayyer_presenter($presenters)
+function add_flyyer_presenter($presenters)
 {
-  if (\class_exists('FlayyerPresenter')) {
+  if (\class_exists('FlyyerPresenter')) {
     // OK
   } else {
     /**
      * Based on Yoast\WP\SEO\Presenters\Open_Graph\Image_Presenter
      */
-    class FlayyerPresenter extends Yoast\WP\SEO\Presenters\Abstract_Indexable_Presenter
+    class FlyyerPresenter extends Yoast\WP\SEO\Presenters\Abstract_Indexable_Presenter
     {
       public function present()
       {
-        $flayyer = new FlayyerAI(get_option('flayyer_project_slug'), esc_url($_SERVER['REQUEST_URI']));
-        // if (get_option('flayyer_secret_key') && get_option('flayyer_strategy') != "None") {
-        //   $flayyer->secret = get_option('flayyer_secret_key');
-        //   $flayyer->strategy = get_option('flayyer_strategy');
+        $flyyer = new Flyyer(get_option('flyyer_project_slug'), esc_url($_SERVER['REQUEST_URI']));
+        // if (get_option('flyyer_secret_key') && get_option('flyyer_strategy') != "None") {
+        //   $flyyer->secret = get_option('flyyer_secret_key');
+        //   $flyyer->strategy = get_option('flyyer_strategy');
         // }
 
-        $return = \PHP_EOL . "\t" . '<meta property="og:image" content="' . $flayyer->href() . '" />';
-        $return .= \PHP_EOL . "\t" . '<meta property="twitter:image" content="' . $flayyer->href() . '" />';
+        $return = \PHP_EOL . "\t" . '<meta property="og:image" content="' . $flyyer->href() . '" />';
+        $return .= \PHP_EOL . "\t" . '<meta property="twitter:image" content="' . $flyyer->href() . '" />';
 
         $is_landing = \is_front_page() || \is_home();
         $is_collection = \is_category();
@@ -100,13 +100,13 @@ function add_flayyer_presenter($presenters)
         $is_article = \is_single() || \is_author();
 
         if ($is_landing) {
-          $return .= \PHP_EOL . "\t" . '<meta property="flayyer:type" content="landing" />';
+          $return .= \PHP_EOL . "\t" . '<meta property="flyyer:type" content="landing" />';
         } else if ($is_collection) {
-          $return .= \PHP_EOL . "\t" . '<meta property="flayyer:type" content="collection" />';
+          $return .= \PHP_EOL . "\t" . '<meta property="flyyer:type" content="collection" />';
         } else if ($is_page) {
-          $return .= \PHP_EOL . "\t" . '<meta property="flayyer:type" content="page" />';
+          $return .= \PHP_EOL . "\t" . '<meta property="flyyer:type" content="page" />';
         } else if ($is_article) {
-          $return .= \PHP_EOL . "\t" . '<meta property="flayyer:type" content="article" />';
+          $return .= \PHP_EOL . "\t" . '<meta property="flyyer:type" content="article" />';
         }
 
         return $return;
@@ -118,7 +118,7 @@ function add_flayyer_presenter($presenters)
     }
   }
 
-  $presenters[] = new FlayyerPresenter();
+  $presenters[] = new FlyyerPresenter();
   return $presenters;
 }
-add_filter('wpseo_frontend_presenters', 'add_flayyer_presenter');
+add_filter('wpseo_frontend_presenters', 'add_flyyer_presenter');

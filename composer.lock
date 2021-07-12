@@ -65,7 +65,7 @@
             "version": "1.0.0",
             "source": {
                 "type": "git",
-                "url": "https://github.com/flayyer/flayyer-php.git",
+                "url": "https://github.com/useflyyer/flyyer-php.git",
                 "reference": "ca75931772a757dbcbc22422d509a3712d305627"
             },
             "dist": {
@@ -98,15 +98,15 @@
                 }
             ],
             "description": "PHP helpers to create FLAYYER URLs",
-            "homepage": "https://github.com/flayyer/flayyer-php",
+            "homepage": "https://github.com/useflyyer/flyyer-php",
             "keywords": [
                 "flayyer",
                 "flayyer-php",
                 "qs"
             ],
             "support": {
-                "issues": "https://github.com/flayyer/flayyer-php/issues",
-                "source": "https://github.com/flayyer/flayyer-php/tree/1.0.0"
+                "issues": "https://github.com/useflyyer/flyyer-php/issues",
+                "source": "https://github.com/useflyyer/flyyer-php/tree/1.0.0"
             },
             "time": "2021-04-21T19:59:49+00:00"
         },

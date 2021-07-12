@@ -82,7 +82,7 @@ module.exports = function (grunt) {
     compress: {
       main: {
         options: {
-          archive: `dist/flayyer-wordpress-plugin.zip`
+          archive: `dist/flyyer-wordpress-plugin.zip`
         },
         files: [
           { src: ['assets/css/*.css'], filter: 'isFile' }, // includes css files in css path

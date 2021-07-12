@@ -13,11 +13,11 @@ if (!defined('ABSPATH')) {
 /**
  * Main plugin class.
  */
-class FLAYYER_Previews
+class FLYYER_Previews
 {
 
   /**
-   * The single instance of FLAYYER_Previews.
+   * The single instance of FLYYER_Previews.
    *
    * @var     object
    * @access  private
@@ -26,9 +26,9 @@ class FLAYYER_Previews
   private static $_instance = null; //phpcs:ignore
 
   /**
-   * Local instance of FLAYYER_Previews_Admin_API
+   * Local instance of FLYYER_Previews_Admin_API
    *
-   * @var FLAYYER_Previews_Admin_API|null
+   * @var FLYYER_Previews_Admin_API|null
    */
   public $admin = null;
 
@@ -113,7 +113,7 @@ class FLAYYER_Previews
   public function __construct($file = '', $version = '1.0.0')
   {
     $this->_version = $version;
-    $this->_token   = 'flayyer_previews';
+    $this->_token   = 'flyyer_previews';
 
     // Load plugin environment variables.
     $this->file       = $file;
@@ -135,7 +135,7 @@ class FLAYYER_Previews
 
     // Load API for generic admin functions.
     if (is_admin()) {
-      $this->admin = new FLAYYER_Previews_Admin_API();
+      $this->admin = new FLYYER_Previews_Admin_API();
     }
 
     // Handle localisation.
@@ -152,7 +152,7 @@ class FLAYYER_Previews
    * @param string $description Description.
    * @param array  $options Options array.
    *
-   * @return bool|string|FLAYYER_Previews_Post_Type
+   * @return bool|string|FLYYER_Previews_Post_Type
    */
   public function register_post_type($post_type = '', $plural = '', $single = '', $description = '', $options = array())
   {
@@ -161,7 +161,7 @@ class FLAYYER_Previews
       return false;
     }
 
-    $post_type = new FLAYYER_Previews_Post_Type($post_type, $plural, $single, $description, $options);
+    $post_type = new FLYYER_Previews_Post_Type($post_type, $plural, $single, $description, $options);
 
     return $post_type;
   }
@@ -175,7 +175,7 @@ class FLAYYER_Previews
    * @param array  $post_types Post types to register this taxonomy for.
    * @param array  $taxonomy_args Taxonomy arguments.
    *
-   * @return bool|string|FLAYYER_Previews_Taxonomy
+   * @return bool|string|FLYYER_Previews_Taxonomy
    */
   public function register_taxonomy($taxonomy = '', $plural = '', $single = '', $post_types = array(), $taxonomy_args = array())
   {
@@ -184,7 +184,7 @@ class FLAYYER_Previews
       return false;
     }
 
-    $taxonomy = new FLAYYER_Previews_Taxonomy($taxonomy, $plural, $single, $post_types, $taxonomy_args);
+    $taxonomy = new FLYYER_Previews_Taxonomy($taxonomy, $plural, $single, $post_types, $taxonomy_args);
 
     return $taxonomy;
   }
@@ -253,7 +253,7 @@ class FLAYYER_Previews
    */
   public function load_localisation()
   {
-    load_plugin_textdomain('flayyer-previews', false, dirname(plugin_basename($this->file)) . '/lang/');
+    load_plugin_textdomain('flyyer-previews', false, dirname(plugin_basename($this->file)) . '/lang/');
   } // End load_localisation ()
 
   /**
@@ -265,7 +265,7 @@ class FLAYYER_Previews
    */
   public function load_plugin_textdomain()
   {
-    $domain = 'flayyer-previews';
+    $domain = 'flyyer-previews';
 
     $locale = apply_filters('plugin_locale', get_locale(), $domain);
 
@@ -274,15 +274,15 @@ class FLAYYER_Previews
   } // End load_plugin_textdomain ()
 
   /**
-   * Main FLAYYER_Previews Instance
+   * Main FLYYER_Previews Instance
    *
-   * Ensures only one instance of FLAYYER_Previews is loaded or can be loaded.
+   * Ensures only one instance of FLYYER_Previews is loaded or can be loaded.
    *
    * @param string $file File instance.
    * @param string $version Version parameter.
    *
-   * @return Object FLAYYER_Previews instance
-   * @see FLAYYER_Previews()
+   * @return Object FLYYER_Previews instance
+   * @see FLYYER_Previews()
    * @since 1.0.0
    * @static
    */
@@ -302,7 +302,7 @@ class FLAYYER_Previews
    */
   public function __clone()
   {
-    _doing_it_wrong(__FUNCTION__, esc_html(__('Cloning of FLAYYER_Previews is forbidden')), esc_attr($this->_version));
+    _doing_it_wrong(__FUNCTION__, esc_html(__('Cloning of FLYYER_Previews is forbidden')), esc_attr($this->_version));
   } // End __clone ()
 
   /**
@@ -312,7 +312,7 @@ class FLAYYER_Previews
    */
   public function __wakeup()
   {
-    _doing_it_wrong(__FUNCTION__, esc_html(__('Unserializing instances of FLAYYER_Previews is forbidden')), esc_attr($this->_version));
+    _doing_it_wrong(__FUNCTION__, esc_html(__('Unserializing instances of FLYYER_Previews is forbidden')), esc_attr($this->_version));
   } // End __wakeup ()
 
   /**

@@ -1,21 +1,21 @@
 {
-  "name": "flayyer/flayyer-wp",
+  "name": "flyyer/flyyer-wp",
   "license": "GPL-2.0-or-later",
   "description": "Generate meaningful image preview (og:image) for your links by using and creating dynamic templates.",
   "keywords": [
-    "flayyer",
+    "flyyer",
     "seo",
     "preview",
     "wordpress",
     "wp"
   ],
   "support": {
-    "issues": "https://github.com/flayyer/flayyer-wp"
+    "issues": "https://github.com/useflyyer/flyyer-wp"
   },
   "require": {
     "php": "^7.1",
     "squizlabs/php_codesniffer": "^3.3.1",
-    "flayyer/flayyer": "^1.0"
+    "flyyer/flyyer": "^2.0.0"
   },
   "require-dev": {
     "wp-coding-standards/wpcs": "2.1.*",

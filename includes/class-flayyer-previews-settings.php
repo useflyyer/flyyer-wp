@@ -13,11 +13,11 @@ if (!defined('ABSPATH')) {
 /**
  * Settings class.
  */
-class FLAYYER_Previews_Settings
+class FLYYER_Previews_Settings
 {
 
   /**
-   * The single instance of FLAYYER_Previews_Settings.
+   * The single instance of FLYYER_Previews_Settings.
    *
    * @var     object
    * @access  private
@@ -61,7 +61,7 @@ class FLAYYER_Previews_Settings
   {
     $this->parent = $parent;
 
-    $this->base = 'flayyer_';
+    $this->base = 'flyyer_';
 
     // Initialise settings.
     add_action('init', array($this, 'init_settings'), 11);
@@ -135,13 +135,13 @@ class FLAYYER_Previews_Settings
       array(
         'location'    => 'menu', // Possible settings: options, menu, submenu.
         'parent_slug' => 'options-general.php',
-        'page_title'  => __('FLAYYER', 'flayyer-previews'),
-        'menu_title'  => __('FLAYYER', 'flayyer-previews'),
+        'page_title'  => __('FLYYER', 'flyyer-previews'),
+        'menu_title'  => __('FLYYER', 'flyyer-previews'),
         'capability'  => 'manage_options',
         'menu_slug'   => $this->parent->_token . '_settings',
         'function'    => array($this, 'settings_page'),
         'icon_url'    => 'dashicons-slides', // https://developer.wordpress.org/resource/dashicons/#slides
-        // 'icon_url'    => plugins_url( 'flayyer-previews/assets/flayyer-logo.png' ),
+        // 'icon_url'    => plugins_url( 'flyyer-previews/assets/flyyer-logo.png' ),
         'position'    => null,
       )
     );
@@ -188,7 +188,7 @@ class FLAYYER_Previews_Settings
    */
   public function add_settings_link($links)
   {
-    $settings_link = '<a href="options-general.php?page=' . $this->parent->_token . '_settings">' . __('Settings', 'flayyer-previews') . '</a>';
+    $settings_link = '<a href="options-general.php?page=' . $this->parent->_token . '_settings">' . __('Settings', 'flyyer-previews') . '</a>';
     array_push($links, $settings_link);
     return $links;
   }
@@ -203,10 +203,10 @@ class FLAYYER_Previews_Settings
     $home_url = home_url('');
     $project_default = str_replace(".", "-", str_replace("www.", "", substr($home_url, strpos($home_url, "://") + 3)));
     $settings['general'] = array(
-      'title'       => __('FLAYYER general settings', 'flayyer-previews'),
+      'title'       => __('FLYYER general settings', 'flyyer-previews'),
       'description' => __(<<<EOT
         <p>
-          FlayyerAI is the platform for your link previews and social media images.
+          Flyyer is the platform for your link previews and social media images.
         </p>
         <p>
           They are automatically enriched from your website's content and fit for every social platform format (no effort required).
@@ -215,25 +215,25 @@ class FLAYYER_Previews_Settings
           Choose the template you like the most or just leave our AI system do the work for you.
         </p>
         <p>
-          Find your <code>project-slug</code> in <a href="https://flayyer.com/auth/login?ref=wp-plugin" target="_blank" rel="noreferrer">your dashboard</a>. If you don't have a project yet, <a href="https://flayyer.com/get-started?ref=wp-plugin" target="_blank" rel="noreferrer">create one here</a>.
+          Find your <code>project-slug</code> in <a href="https://flyyer.io/auth/login?ref=wp-plugin" target="_blank" rel="noreferrer">your dashboard</a>. If you don't have a project yet, <a href="https://flyyer.io/get-started?ref=wp-plugin" target="_blank" rel="noreferrer">create one here</a>.
         </p>
         <p>
-          Read the full integration guide <a href="https://docs.flayyer.com/guides/php/wordpress?ref=wp-plugin" target="_blank" rel="noreferrer">here</a>.
+          Read the full integration guide <a href="https://docs.flyyer.io/guides/php/wordpress?ref=wp-plugin" target="_blank" rel="noreferrer">here</a>.
         </p>
-      EOT, 'flayyer-previews'),
+      EOT, 'flyyer-previews'),
       'fields'      => array(
         array(
           'id'          => 'project_slug',
-          'label'       => __('Project slug', 'flayyer-previews'),
-          'description' => __('This is your project slug, find it in your dashboard (it defaults to your domain name). Your dashboard: https://flayyer.com/auth/login?ref=wp-plugin', 'flayyer-previews'),
+          'label'       => __('Project slug', 'flyyer-previews'),
+          'description' => __('This is your project slug, find it in your dashboard (it defaults to your domain name). Your dashboard: https://flyyer.io/auth/login?ref=wp-plugin', 'flyyer-previews'),
           'type'        => 'text',
           'default'     => $project_default,
-          'placeholder' => __('your-project-slug', 'flayyer-previews'),
+          'placeholder' => __('your-project-slug', 'flyyer-previews'),
         ),
         // array(
         //   'id'          => 'secret_key',
-        //   'label'       => __('[Optional] Secret key', 'flayyer-previews'),
-        //   'description' => __('For Signed URLs. Find it in Your dashboard > your-project > Advanced settings > Signed URLs.', 'flayyer-previews'),
+        //   'label'       => __('[Optional] Secret key', 'flyyer-previews'),
+        //   'description' => __('For Signed URLs. Find it in Your dashboard > your-project > Advanced settings > Signed URLs.', 'flyyer-previews'),
         //   'type'        => 'password',
         //   'default'     => '',
         //   'placeholder' => '',
@@ -241,8 +241,8 @@ class FLAYYER_Previews_Settings
         // ),
         // array(
         //   'id'          => 'strategy',
-        //   'label'       => __('[Optional] Signing method', 'flayyer-previews'),
-        //   'description' => __('Define your signature strategy. You must have provided a secret key.', 'flayyer-previews'),
+        //   'label'       => __('[Optional] Signing method', 'flyyer-previews'),
+        //   'description' => __('Define your signature strategy. You must have provided a secret key.', 'flyyer-previews'),
         //   'type'        => 'select',
         //   'options'     => array(
         //     'None'    => 'None',
@@ -344,7 +344,7 @@ class FLAYYER_Previews_Settings
 
     // Build page HTML.
     $html      = '<div class="wrap" id="' . $this->parent->_token . '_settings">' . "\n";
-    $html .= '<h2>' . __('Plugin Settings', 'flayyer-previews') . '</h2>' . "\n";
+    $html .= '<h2>' . __('Plugin Settings', 'flyyer-previews') . '</h2>' . "\n";
 
     $tab = '';
     //phpcs:disable
@@ -398,7 +398,7 @@ class FLAYYER_Previews_Settings
 
     $html     .= '<p class="submit">' . "\n";
     $html .= '<input type="hidden" name="tab" value="' . esc_attr($tab) . '" />' . "\n";
-    $html .= '<input name="Submit" type="submit" class="button-primary" value="' . esc_attr(__('Save Settings', 'flayyer-previews')) . '" />' . "\n";
+    $html .= '<input name="Submit" type="submit" class="button-primary" value="' . esc_attr(__('Save Settings', 'flyyer-previews')) . '" />' . "\n";
     $html     .= '</p>' . "\n";
     $html         .= '</form>' . "\n";
     $html             .= '</div>' . "\n";
@@ -407,15 +407,15 @@ class FLAYYER_Previews_Settings
   }
 
   /**
-   * Main FLAYYER_Previews_Settings Instance
+   * Main FLYYER_Previews_Settings Instance
    *
-   * Ensures only one instance of FLAYYER_Previews_Settings is loaded or can be loaded.
+   * Ensures only one instance of FLYYER_Previews_Settings is loaded or can be loaded.
    *
    * @since 1.0.0
    * @static
-   * @see FLAYYER_Previews()
+   * @see FLYYER_Previews()
    * @param object $parent Object instance.
-   * @return object FLAYYER_Previews_Settings instance
+   * @return object FLYYER_Previews_Settings instance
    */
   public static function instance($parent)
   {
@@ -432,7 +432,7 @@ class FLAYYER_Previews_Settings
    */
   public function __clone()
   {
-    _doing_it_wrong(__FUNCTION__, esc_html(__('Cloning of FLAYYER_Previews_API is forbidden.')), esc_attr($this->parent->_version));
+    _doing_it_wrong(__FUNCTION__, esc_html(__('Cloning of FLYYER_Previews_API is forbidden.')), esc_attr($this->parent->_version));
   } // End __clone()
 
   /**
@@ -442,7 +442,7 @@ class FLAYYER_Previews_Settings
    */
   public function __wakeup()
   {
-    _doing_it_wrong(__FUNCTION__, esc_html(__('Unserializing instances of FLAYYER_Previews_API is forbidden.')), esc_attr($this->parent->_version));
+    _doing_it_wrong(__FUNCTION__, esc_html(__('Unserializing instances of FLYYER_Previews_API is forbidden.')), esc_attr($this->parent->_version));
   } // End __wakeup()
 
 }
